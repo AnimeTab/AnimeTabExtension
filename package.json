@@ -1,0 +1,26 @@
+{
+  "name": "animetab",
+  "version": "1.0.0",
+  "description": "Get inspired by anime thoughts everyday",
+  "main": "index.js",
+  "dependencies": {
+    "browserify": "^16.2.3",
+    "browserify-fs": "^1.0.0",
+    "level-filesystem": "^1.2.0",
+    "requirejs": "^2.3.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "browserify src/load.js -o src/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/japsuchiha/AnimeTab.git"
+  },
+  "author": "japneet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/japsuchiha/AnimeTab/issues"
+  },
+  "homepage": "https://github.com/japsuchiha/AnimeTab#readme"
+}

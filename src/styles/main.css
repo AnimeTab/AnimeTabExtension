@@ -1,0 +1,112 @@
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: "Playfair Display";
+}
+
+.header {
+    overflow: hidden;
+    height: 140px;
+}
+
+.container {
+    height: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    overflow-x: hidden;
+}
+
+img {
+    position: relative;
+    left: 4%;
+}
+
+.mark {
+    opacity: 0.3;
+    height: 10%;
+    position: fixed;
+    left: 22%;
+    top: 35%;
+}
+
+.quote {
+    margin: 0 auto; 
+    max-width: 30%;
+    font-size: 2.25rem;
+    text-align: center;
+}
+
+
+.author{
+    position: relative;
+    font-size: 1.5rem;
+}
+
+footer {
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+button {
+    position: absolute;
+    right: 4%;
+    bottom: 2%;
+    background: none;
+    border: none;
+    color: white;
+    height: 50px;
+    padding: 5px;
+    width: 140px;
+    font-family: 'Roboto';
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1em;
+}
+
+.add-quote {
+    display: block;
+    background: none;
+    border: none;
+    font-family: "Crimson Text"
+}
+
+.add-author {
+    display: block;
+    background: none;
+    border: none;
+    font-family: "Crimson Text"
+}
+
+.add-anime {
+    display: block;
+    background: none;
+    border: none;
+    font-family: "Crimson Text"
+}
+
+@media (max-width : 750px) {
+    
+    img {
+        display: none;
+    }
+
+    .quote {
+        font-size: 1rem;
+        max-width: 350px;
+    }
+
+    button {
+        font-size: 0.7rem;
+    }
+}
+
+@media (min-width: 750px) {
+
+    .quote {
+        max-width: 60%;
+    }
+}

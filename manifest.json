@@ -1,0 +1,15 @@
+
+{
+    "name": "Anime Tab",
+    "author": "animetab.xyz",
+    "version": "1.0",
+    "manifest_version" : 2,
+    "browser_action": {
+        "browser_style": true,
+        "default_title": "Anime Tab"
+    },
+    "homepage_url": "https://japsuchiha.github.io/",
+    "chrome_url_overrides": {
+        "newtab": "src/layout/index.html"
+    }
+}

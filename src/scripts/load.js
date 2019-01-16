@@ -1,13 +1,4 @@
 
-// const filesystem = require('level-filesystem')
-// const fs = filesystem(db)
-// const path = require("path")
-
-// console.log(__dirname)
-// const meta = path.join(__dirname,'/data/temp.json')
-// console.log(meta)
-// console.log(fs)
-
 let question = document.querySelector('.question')
 let counter = 0
 let value = ''
@@ -63,15 +54,12 @@ function end() {
 
     // POST to temporary db
     post();
-    
-    // .then((data)=>{
-    //     console.log('Request success: ', data)
-    // })
-    
+
     let container = document.querySelector('.container')
         container.removeChild(input)
         container.removeChild(question)
         let message = document.createElement('p')
+        message.className = "submission"
         message.innerHTML = "Thank You! We will review your submission and add it ASAP!"
         container.appendChild(message)
 }
@@ -95,6 +83,9 @@ rightIcon.addEventListener('click', ()=>{
             break
             case 2:
             character = value
+            button.style.visibility  = "visible"
+            rightIcon.style.visibility = "hidden"
+            leftIcon.style.visibility = "hidden"
             break
         }
         console.log({anime, quote, character, counter})
@@ -120,6 +111,7 @@ leftIcon.addEventListener('click', ()=>{
             break
             case 2:
             character = value
+            button.style.visibility  = "visible"
             break
         }
         console.log({anime, quote, character, counter})

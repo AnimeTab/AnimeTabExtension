@@ -88,6 +88,17 @@ button {
     font-family: "Crimson Text"
 }
 
+.title > p {
+    display: inline;
+}
+
+.title > i {
+    opacity: 0.4;
+    position: relative;
+    z-index: -5;
+    top: -10px;
+    left: 0px;
+}
 @media (max-width : 750px) {
     
     img {

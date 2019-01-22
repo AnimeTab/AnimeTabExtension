@@ -8,6 +8,7 @@ let value = ''
 let anime = ''
 let character = ''
 let quote = ''
+let email = ''
 
 // questions to be displayed
 
@@ -15,6 +16,7 @@ let questions = [
     "Which anime do you want to see?",
     "Enter those inspiring lines!",
     "Who said these?",
+    "Enter your email"
 ]
 
 //initial render
@@ -37,7 +39,7 @@ function changequestion() {
 }
 
 const post = async() => {
-    const send = await fetch(`http://127.0.0.1:8080/quote/${quote}`, {
+    const send = await fetch(`https://animetab.herokuapp.com/${quote}`, {
         method: 'POST',
         headers: new Headers({
             'Content-Type': 'application/json'
@@ -72,7 +74,7 @@ let button = document.querySelector('button')
 
 rightIcon.addEventListener('click', ()=>{
 
-    if(counter <= 2) {
+    if(counter <= 3) {
         value = ins.value
         switch (counter) {
             case 0: 
@@ -83,6 +85,9 @@ rightIcon.addEventListener('click', ()=>{
             break
             case 2:
             character = value
+            break
+            case 3:
+            email = value
             button.style.visibility  = "visible"
             rightIcon.style.visibility = "hidden"
             leftIcon.style.visibility = "hidden"
@@ -91,7 +96,7 @@ rightIcon.addEventListener('click', ()=>{
         console.log({anime, quote, character, counter})
     }
 
-    if(counter < 2 && counter >= 0) {
+    if(counter < 3 && counter >= 0) {
         counter++
         changequestion()
     }
@@ -100,7 +105,7 @@ rightIcon.addEventListener('click', ()=>{
 
 leftIcon.addEventListener('click', ()=>{
     
-    if(counter <= 2) {
+    if(counter <= 3) {
         value = ins.value
         switch (counter+1) {
             case 0: 
@@ -111,13 +116,15 @@ leftIcon.addEventListener('click', ()=>{
             break
             case 2:
             character = value
+            case 3:
+            email = value
             button.style.visibility  = "visible"
             break
         }
         console.log({anime, quote, character, counter})
     }
 
-    if(counter <= 2 && counter >0)
+    if(counter <= 3 && counter >0)
         counter--
     changequestion()
 })

@@ -28,11 +28,11 @@ window.onload = () => {
 
     // post to db
 
-    button.addEventListener("click", () => {
-        document.querySelector('.quote').style.display = "none"
-        document.querySelector('.add').style.display = "block"
-        button.innerHTML = "Post!"
-    })
+    // button.addEventListener("click", () => {
+    //     document.querySelector('.quote').style.display = "none"
+    //     document.querySelector('.add').style.display = "block"
+    //     button.innerHTML = "Post!"
+    // })
 
 }
  
@@ -41,7 +41,7 @@ const run = () => {
     
     // load data
 
-    fetch('http://127.0.0.1:8080/quotes')
+    fetch('https://animetab.herokuapp.com/quotes')
     .then((resp) => resp.json())
     .then((data) => {
         console.log(data.animes)
@@ -173,7 +173,7 @@ function preloadImages(array) {
     }
     console.log(list)
 }
-setTimeout(preloadImages([naruto_logo, mha_logo, opm_logo, fma_logo]),5000)
+(preloadImages([naruto_logo, mha_logo, opm_logo, fma_logo]))
 
 run()
 

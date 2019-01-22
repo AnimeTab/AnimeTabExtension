@@ -11,5 +11,8 @@
     "homepage_url": "https://japsuchiha.github.io/",
     "chrome_url_overrides": {
         "newtab": "src/layout/index.html"
+    },
+    "icon": {
+        "32": "src/logos/icon.png"
     }
 }

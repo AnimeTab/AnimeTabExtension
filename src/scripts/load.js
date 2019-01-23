@@ -38,24 +38,82 @@ function changequestion() {
     question.appendChild(ques)
 }
 
-const post = async() => {
-    const send = await fetch(`https://animetab.herokuapp.com/${quote}`, {
+async function post(color, logo, email){
+    const send = await fetch(`http://127.0.0.1:5000/quote/${quote}`, {
         method: 'POST',
         headers: new Headers({
             'Content-Type': 'application/json'
         }),
         body: JSON.stringify({
             anime: anime,
-            author: character
+            author: character,
+            color: color,
+            logo: logo,
+            email: email
         })
     })
-
+    console.log("bye")
 }
-function end() {
-    
 
+// async function get() {
+//     quotes = []
+//     const get = await fetch('http://127.0.0.1:5000/quotes')
+//     const data = await get.json();
+//     for(let i in data.animes) {
+//         if(data.animes[i].anime == anime) {
+//             let color = data.animes[i].color
+//             let logo = data.animes[i].logo
+//             quotes.push(color)
+//             quotes.push(logo)
+//             break;
+//         }
+//     }
+//     console.log("hi")
+//     return quotes
+//     console.log(data.animes.length)
+// }
+
+function get(){
+    quotes = []
+    fetch('http://127.0.0.1:5000/quotes')
+    .then((resp) => resp.json())
+    .then((data) => {
+        for(let i in data.animes) {
+            if(data.animes[i].anime.toLowerCase() == anime.toLowerCase().trim()) {
+                let color = data.animes[i].color
+                let logo = data.animes[i].logo
+                quotes.push(color)
+                quotes.push(logo)
+                console.log(quotes)
+                break;
+             }
+             else {
+                 quotes.push("color")
+                 quotes.push("logo")
+             }
+        }
+        fetch(`http://127.0.0.1:5000/quote/${quote}`, {
+        method: 'POST',
+        headers: new Headers({
+            'Content-Type': 'application/json'
+        }),
+        body: JSON.stringify({
+            anime: anime,
+            author: character,
+            color: quotes[0],
+            logo: quotes[1],
+            email: email
+        })
+    })
+    })
+}
+
+function end() {
+    // let stuff = []
+    get();
     // POST to temporary db
-    post();
+
+    // setTimeout(post(stuff[0],stuff[1],email), 3000)
 
     let container = document.querySelector('.container')
         container.removeChild(input)

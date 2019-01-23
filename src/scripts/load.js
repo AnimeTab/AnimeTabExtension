@@ -55,23 +55,6 @@ async function post(color, logo, email){
     console.log("bye")
 }
 
-// async function get() {
-//     quotes = []
-//     const get = await fetch('http://127.0.0.1:5000/quotes')
-//     const data = await get.json();
-//     for(let i in data.animes) {
-//         if(data.animes[i].anime == anime) {
-//             let color = data.animes[i].color
-//             let logo = data.animes[i].logo
-//             quotes.push(color)
-//             quotes.push(logo)
-//             break;
-//         }
-//     }
-//     console.log("hi")
-//     return quotes
-//     console.log(data.animes.length)
-// }
 
 function get(){
     quotes = []

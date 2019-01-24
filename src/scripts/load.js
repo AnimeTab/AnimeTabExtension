@@ -58,7 +58,7 @@ async function post(color, logo, email){
 
 function get(){
     quotes = []
-    fetch('http://127.0.0.1:5000/quotes')
+    fetch('https://animetab.herokuapp.com/quotes')
     .then((resp) => resp.json())
     .then((data) => {
         for(let i in data.animes) {
@@ -75,7 +75,7 @@ function get(){
                  quotes.push("logo")
              }
         }
-        fetch(`http://127.0.0.1:5000/quote/${quote}`, {
+        fetch(`https://animetab.herokuapp.com/quote/${quote}`, {
         method: 'POST',
         headers: new Headers({
             'Content-Type': 'application/json'

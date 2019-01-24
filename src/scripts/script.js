@@ -11,7 +11,7 @@ const run = () => {
     
     // load data
 
-    fetch('http://127.0.0.1:5000/quotes')
+    fetch('https://animetab.herokuapp.com/quotes')
     .then((resp) => resp.json())
     .then((data) => {
         console.log(data.animes)

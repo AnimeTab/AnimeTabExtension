@@ -26,6 +26,7 @@ const run = () => {
             var img = new Image();
             list.push(img);
             img.src = quotes[i].logo;
+            console.log("loaded")
         }
         console.log(list)
 
@@ -47,6 +48,7 @@ const run = () => {
         let image = document.createElement('img')
         let dif
         image.src = quote.logo
+        image.onload = function() {
         if(image.width <= 400) {
             dif = 2.5
             image.style.top = '30px'
@@ -72,7 +74,7 @@ const run = () => {
         
             
         logo.appendChild(image)    
-        
+    }
         // display quote
 
         let title = document.querySelector('.title')

@@ -39,7 +39,7 @@ function changequestion() {
 }
 
 async function post(color, logo, email){
-    const send = await fetch(`http://127.0.0.1:5000/quote/${quote}`, {
+    const send = await fetch(`https://animetab.herokuapp.com/quote/${quote}`, {
         method: 'POST',
         headers: new Headers({
             'Content-Type': 'application/json'

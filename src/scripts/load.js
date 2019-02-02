@@ -92,11 +92,7 @@ function get(){
 }
 
 function end() {
-    // let stuff = []
     get();
-    // POST to temporary db
-
-    // setTimeout(post(stuff[0],stuff[1],email), 3000)
 
     let container = document.querySelector('.container')
         container.removeChild(input)

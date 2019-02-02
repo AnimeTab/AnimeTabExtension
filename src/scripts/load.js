@@ -170,6 +170,38 @@ leftIcon.addEventListener('click', ()=>{
     changequestion()
 })
 
+function checkEnter(e) {
+    if(e && e.keyCode == 13) {
+        if(counter <= 3) {
+            value = ins.value
+            switch (counter) {
+                case 0: 
+                anime = value
+                break
+                case 1:
+                quote = value
+                break
+                case 2:
+                character = value
+                break
+                case 3:
+                email = value
+                button.style.visibility  = "visible"
+                rightIcon.style.visibility = "hidden"
+                leftIcon.style.visibility = "hidden"
+                break
+            }
+            console.log({anime, quote, character, counter})
+        }
+    
+        if(counter < 3 && counter >= 0) {
+            counter++
+            changequestion()
+        }
+    }
+}
+document.querySelector('body').addEventListener('keypress', checkEnter)
+
 button.addEventListener('click', (e)=> {
     e.preventDefault()
     end()

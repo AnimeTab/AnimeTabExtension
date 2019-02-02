@@ -12,7 +12,10 @@
     "chrome_url_overrides": {
         "newtab": "src/layout/index.html"
     },
-    "icon": {
-        "32": "src/logos/icon.png"
+    "icons": {
+        "16": "src/logos/16.png",
+        "32": "src/logos/icon.png",
+        "48": "src/logos/48.png",
+        "128": "src/logos/128.png"
     }
 }
